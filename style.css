@@ -79,55 +79,87 @@ section { padding: 100px 0; flex-grow: 1; }
 footer { padding: 40px 0; text-align: center; color: var(--text-muted); font-size: 0.9rem; margin-top: auto; }
 
 @media screen and (max-width: 768px) {
-    .title-large {
-        font-size: 2.5rem;
-        letter-spacing: -1px;
-    }
-    .section-title {
-        font-size: 2.2rem;
-        margin-bottom: 40px;
+    /* Mencegah layar bisa di-geser ke samping */
+    html, body {
+        overflow-x: hidden;
     }
 
-    .grid-2 {
-        grid-template-columns: 1fr;
-        gap: 30px;
+    body {
+        padding-top: 100px; 
     }
 
+    /* Menu Navigasi: Logo di atas, menu di bawah berjajar rapi seperti tombol kecil */
     .nav-inner {
         flex-direction: column;
-        justify-content: center;
         height: auto;
-        padding: 15px 0;
-        gap: 10px;
+        padding: 15px 20px;
+        gap: 15px;
     }
     .nav-links {
-        gap: 15px;
+        gap: 10px;
         flex-wrap: wrap;
         justify-content: center;
+        width: 100%;
     }
     .nav-links a {
         font-size: 0.85rem;
-    }
-    
-    body {
-        padding-top: 110px; 
+        padding: 6px 12px;
+        background: #F2F2F7;
+        border-radius: 20px;
     }
 
+    /* Teks & Judul diperkecil */
+    .title-large {
+        font-size: 2.2rem;
+        letter-spacing: -1px;
+        margin-bottom: 15px;
+    }
+    .section-title {
+        font-size: 1.8rem;
+        margin-bottom: 30px;
+    }
+    p.text-muted {
+        font-size: 1rem !important; 
+        padding: 0 !important; 
+    }
+
+    /* Layout Kartu lebih padat */
+    .grid-2 {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
     section {
-        padding: 60px 0;
+        padding: 40px 0;
     }
     .container {
         padding: 0 20px;
     }
     .card {
-        padding: 25px;
+        padding: 25px 20px;
     }
 
+    /* Tombol memanjang penuh ke samping */
     .btn {
-        width: 100%; 
-        margin-bottom: 10px;
+        width: 100%;
+        margin-bottom: 0;
+        padding: 14px 20px;
+        font-size: 0.95rem;
     }
-    .card h3 {
-        font-size: 1.4rem !important;
+    div[style*="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;"] {
+        flex-direction: column;
+        gap: 12px !important;
+        width: 100%;
+    }
+
+    /* Merapikan garis Timeline di About */
+    .timeline-node {
+        padding-left: 25px;
+        margin-left: 5px;
+    }
+    .timeline-indicator {
+        left: -10px;
+        width: 16px;
+        height: 16px;
+        border-width: 3px;
     }
 }
